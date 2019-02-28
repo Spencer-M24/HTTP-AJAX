@@ -28,13 +28,28 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  // handleChange = event => {
+  //   event.persist();
+  //   this.setState(prevState => {
+  //     return {
+  //       newFriend: {
+  //         ...prevState.newFriend,
+  //         [event.target.name]: event.target.value
+  //       }
+  //     };
+  //   });
+  // };
+
+
+
+
   handleChange = event => {
-    event.persist();
+    const {name, value } = event.target;
     this.setState(prevState => {
       return {
         newFriend: {
           ...prevState.newFriend,
-          [event.target.name]: event.target.value
+          [name]: value
         }
       };
     });
